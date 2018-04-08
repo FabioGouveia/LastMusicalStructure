@@ -10,4 +10,6 @@
     <dimen name="dimen_50">50dp</dimen>
     <dimen name="dimen_xl">64dp</dimen>
 
+    <dimen name="menu_dropdown_offset">5.0dp</dimen>
+
 </resources>
