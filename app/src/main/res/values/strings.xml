@@ -16,4 +16,7 @@
     <string name="dialog_cancel_button">Cancel</string>
     <string name="new_folder_successfully_created">Folder \'%1$s\' successfully created</string>
     <string name="err_folder_name_empty">Folder needs a name</string>
+
+    <string name="artist_biography_tab">Biography</string>
+    <string name="artist_album_tab">Albums</string>
 </resources>
