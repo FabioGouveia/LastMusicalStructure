@@ -4,4 +4,12 @@
     <string name="number_of_artists">Artists: %1$d</string>
     <string name="number_of_albums">Albums: %1$d</string>
     <string name="number_of_tracks">Tracks: %1$d</string>
+
+    <string name="create_new_folder_dialog_title">Create new folder</string>
+    <string name="insert_folder_name_edit_text_hint">Folder name here&#8230;</string>
+    <string name="insert_folder_icon_spinner_label">Folder icon:</string>
+    <string name="dialog_save_button">Save</string>
+    <string name="dialog_cancel_button">Cancel</string>
+    <string name="new_folder_successfully_created">Folder \'%1$s\' successfully created</string>
+    <string name="err_folder_name_empty">Folder needs a name</string>
 </resources>
