@@ -7,4 +7,12 @@
         <item>@drawable/ic_folder</item>
         <item>@drawable/ic_spa</item>
     </array>
+
+    <string-array name="folder_icon_text">
+        <item>Audio Track icon</item>
+        <item>Beach icon</item>
+        <item>Favorite icon</item>
+        <item>Folder icon</item>
+        <item>Spa icon</item>
+    </string-array>
 </resources>
