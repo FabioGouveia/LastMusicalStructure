@@ -5,6 +5,10 @@
     <string name="number_of_albums">Albums: %1$d</string>
     <string name="number_of_tracks">Tracks: %1$d</string>
 
+    <string name="folder_menu">Folder menu</string>
+    <string name="add_an_artist">Add an artist</string>
+    <string name="delete_folder">Permanent delete this folder</string>
+
     <string name="create_new_folder_dialog_title">Create new folder</string>
     <string name="insert_folder_name_edit_text_hint">Folder name here&#8230;</string>
     <string name="insert_folder_icon_spinner_label">Folder icon:</string>
