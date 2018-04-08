@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Last Musical Structure</string>
+
+    <string name="number_of_artists">Artists: %1$d</string>
+    <string name="number_of_albums">Albums: %1$d</string>
+    <string name="number_of_tracks">Tracks: %1$d</string>
 </resources>
