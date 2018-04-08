@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <dimen name="dimen_xxs">1dp</dimen>
     <dimen name="dimen_xs">2dp</dimen>
     <dimen name="dimen_s">8dp</dimen>
@@ -17,5 +16,4 @@
     <dimen name="artist_small_card_width">130dp</dimen>
     <dimen name="artist_small_card_text_size">12sp</dimen>
     <dimen name="artist_card_height">230dp</dimen>
-
 </resources>
