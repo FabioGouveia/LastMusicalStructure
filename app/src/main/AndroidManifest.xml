@@ -35,6 +35,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".user.FolderActivity" />
         </activity>
+
+        <provider
+            android:name=".data.UserProvider"
+            android:authorities="com.example.android.lastmusicalstructure.user"
+            android:exported="false" />
     </application>
 
 </manifest>
