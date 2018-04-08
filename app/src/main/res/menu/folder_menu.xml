@@ -5,6 +5,10 @@
     <item
         android:icon="@drawable/ic_folder_s"
         android:title="@string/folder_menu"
-        app:showAsAction="always" />
+        app:showAsAction="always">
+
+        <menu></menu>
+
+    </item>
 
 </menu>
