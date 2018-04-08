@@ -12,4 +12,10 @@
 
     <dimen name="menu_dropdown_offset">5.0dp</dimen>
 
+    <dimen name="artist_card_elevation">4dp</dimen>
+    <dimen name="artist_card_radius">@dimen/dimen_s</dimen>
+    <dimen name="artist_small_card_width">130dp</dimen>
+    <dimen name="artist_small_card_text_size">12sp</dimen>
+    <dimen name="artist_card_height">230dp</dimen>
+
 </resources>
