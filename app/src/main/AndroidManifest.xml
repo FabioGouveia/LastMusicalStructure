@@ -28,6 +28,14 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
+            android:name=".artist.AlbumActivity"
+            android:theme="@style/AppTheme">
+            <!-- Parent activity meta data to support API level 4+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".user.FolderActivity" />
+        </activity>
+        <activity
             android:name=".artist.ArtistSearchActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <!-- Parent activity meta data to support API level 4+ -->
