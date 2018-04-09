@@ -1,10 +1,6 @@
 <resources>
     <string name="app_name">Last Musical Structure</string>
 
-    <string name="number_of_artists">Artists: %1$d</string>
-    <string name="number_of_albums">Albums: %1$d</string>
-    <string name="number_of_tracks">Tracks: %1$d</string>
-
     <string name="folder_menu">Folder menu</string>
     <string name="add_an_artist">Add an artist</string>
     <string name="delete_folder">Permanent delete this folder</string>
