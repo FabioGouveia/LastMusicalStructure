@@ -19,7 +19,7 @@
 
     <string name="artist_biography_tab">Biography</string>
     <string name="artist_albums_tab">Albums</string>
-    <string name="artist_album_info_tab">Album</string>
+    <string name="artist_album_description_tab">Description</string>
     <string name="artist_tracks_tab">Tracks</string>
 
     <string name="fetching_data">Downloading data from last.fm&#8230;</string>
