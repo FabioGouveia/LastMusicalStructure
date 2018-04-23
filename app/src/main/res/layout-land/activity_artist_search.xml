@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/LargeRootView">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/search_app_bar"
+        style="@style/ArtistAppBarLayout">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/artist_selection_toolbar"
+            style="@style/ArtistAppBarToolBar" />
+
+        <LinearLayout
+            android:id="@+id/artist_search_tab_pages_layout"
+            style="@style/ArtistSearchTab">
+
+            <Button
+                android:id="@+id/artist_search_tab_previous_page"
+                style="@style/ArtistSearchTabButton.Previous" />
+
+            <View
+                android:id="@+id/tab_separator"
+                style="@style/ArtistSearchTabSeparator" />
+
+            <Button
+                android:id="@+id/artist_search_tab_next_page"
+                style="@style/ArtistSearchTabButton.Next" />
+
+        </LinearLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ProgressBar
+        android:id="@+id/artist_loading_progress_bar"
+        style="@style/ArtistSearchProgressBar" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/artist_list_nested_scroll_view"
+        style="@style/LargeRootView"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ScrollView style="@style/LargeRootView">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/artist_list"
+                style="@style/Recycler" />
+
+        </ScrollView>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/artist_search_page_number_display_view"
+        style="@style/ArtistSearchPageNumber"
+        app:layout_anchor="@id/artist_list_nested_scroll_view"
+        app:layout_anchorGravity="bottom|end" />
+
+    <LinearLayout
+        android:id="@+id/empty_view"
+        style="@style/ArtistSearchEmptyView">
+
+        <TextView
+            android:id="@+id/empty_view_text_view"
+            style="@style/ArtistSearchEmptyViewText" />
+
+        <Button
+            android:id="@+id/empty_view_button"
+            style="@style/ArtistSearchEmptyViewButton" />
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
