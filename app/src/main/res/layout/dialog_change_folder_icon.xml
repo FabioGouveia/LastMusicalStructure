@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/change_folder_icon_dialog_root_view"
+    style="@style/LargeRootView.Vertical">
+
+    <TextView style="@style/DialogSpinnerLabel" />
+
+    <Spinner
+        android:id="@+id/new_folder_icon_spinner"
+        style="@style/newFolderIconSpinnerItemStyle" />
+
+</LinearLayout>
