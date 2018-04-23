@@ -12,5 +12,4 @@
         android:id="@+id/track_duration_list_item_text_view"
         style="@style/TrackListItem.Duration" />
 
-
 </LinearLayout>
