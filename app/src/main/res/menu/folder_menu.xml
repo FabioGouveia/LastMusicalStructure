@@ -12,6 +12,12 @@
                 android:id="@+id/add_artist_to_folder"
                 android:title="@string/add_an_artist" />
             <item
+                android:id="@+id/rename_folder"
+                android:title="@string/rename_folder" />
+            <item
+                android:id="@+id/change_folder_icon"
+                android:title="@string/change_folder_icon" />
+            <item
                 android:id="@+id/delete_folder"
                 android:title="@string/delete_folder" />
         </menu>
