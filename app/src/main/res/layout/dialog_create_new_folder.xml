@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/insert_new_folder_dialog_root_view"
+    style="@style/LargeRootView.Vertical">
+
+    <android.support.design.widget.TextInputLayout style="@style/InsertFolderNameLayout">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/new_folder_name_input_field"
+            style="@style/InsertFolderNameInputField" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView style="@style/DialogSpinnerLabel" />
+
+    <Spinner
+        android:id="@+id/create_new_folder_icon_spinner"
+        style="@style/newFolderIconSpinnerItemStyle" />
+
+</LinearLayout>
