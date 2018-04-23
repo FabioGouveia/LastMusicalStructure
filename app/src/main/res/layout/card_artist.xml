@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    style="@style/ArtistCard"
+    card_view:cardBackgroundColor="@color/colorSecondaryLight"
+    card_view:cardCornerRadius="@dimen/artist_card_radius"
+    card_view:cardElevation="@dimen/artist_card_elevation"
+    card_view:cardUseCompatPadding="true">
+
+    <RelativeLayout style="@style/LargeRootView">
+
+        <ImageView
+            android:id="@+id/artist_card_imageView"
+            style="@style/ArtistCardImage"
+            android:contentDescription="@string/artist_card" />
+
+        <LinearLayout style="@style/ArtistCardFooter">
+
+            <TextView
+                android:id="@+id/artist_name_text_view"
+                style="@style/ArtistCardName" />
+
+            <TextView
+                android:id="@+id/artist_saved_label_text_view"
+                style="@style/ArtistPassedLabel" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
