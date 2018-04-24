@@ -11,4 +11,6 @@
     <color name="colorSecondaryLight">#ffffff</color>
     <color name="colorSecondaryLightTranslucent">#7fffffff</color>
     <color name="colorSecondaryText">#000000</color>
+
+    <color name="colorFolderCardBackground">#cccccc</color>
 </resources>
