@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".FolderListActivity">
+        <activity android:name=".ui.FolderListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,22 +20,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".user.FolderActivity"
+            android:name=".ui.FolderActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".FolderListActivity" />
+                android:value=".ui.FolderListActivity" />
         </activity>
         <activity
-            android:name=".artist.ArtistSearchActivity"
+            android:name=".ui.ArtistSearchActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".user.FolderActivity" />
+                android:value=".ui.FolderActivity" />
         </activity>
         <provider
             android:name=".data.UserProvider"
-            android:authorities="com.example.android.lastmusicalstructure.user"
+            android:authorities="com.example.android.lastmusicalstructure.folder"
             android:exported="false" />
     </application>
 
