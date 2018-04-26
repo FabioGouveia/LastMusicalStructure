@@ -23,5 +23,6 @@
     <dimen name="artist_card_height">230dp</dimen>
     <dimen name="artist_search_progress_bar_size">72dp</dimen>
 
+    <dimen name="folder_fragment_image_container_height">180dp</dimen>
     <dimen name="folder_fragment_separator_height">4dp</dimen>
 </resources>
