@@ -5,7 +5,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp">
+        android:layout_height="@dimen/folder_fragment_image_container_height">
 
         <ImageView
             android:id="@+id/folder_fragment_image_view"
