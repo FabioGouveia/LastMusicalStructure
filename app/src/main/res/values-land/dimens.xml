@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="folder_list_empty_text_view_margin_top">128dp</dimen>
+
+    <dimen name="folder_fragment_image_width">170dp</dimen>
+    <dimen name="folder_fragment_image_height">100dp</dimen>
+</resources>
