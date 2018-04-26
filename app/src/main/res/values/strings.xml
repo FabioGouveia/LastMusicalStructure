@@ -1,22 +1,49 @@
 <resources>
     <string name="app_name">Last Musical Structure</string>
 
+    <string name="no_internet_connection">No internet connection found!</string>
+    <string name="no_online_artists_available">No online artist available!</string>
+    <string name="no_internet_connection_button">Try again</string>
+
     <string name="folder_menu">Folder menu</string>
     <string name="add_an_artist">Add an artist</string>
+    <string name="rename_folder">Rename</string>
+    <string name="change_folder_icon">Change folder icon</string>
     <string name="delete_folder">Permanent delete this folder</string>
 
+    <string name="add_your_first_folder">Add your first folder to store your favourite artists</string>
     <string name="create_new_folder_dialog_title">Create new folder</string>
+    <string name="rename_folder_dialog_title">Rename the folder</string>
+    <string name="change_folder_icon_dialog_title">Select new folder icon</string>
     <string name="insert_folder_name_edit_text_hint">Folder name here&#8230;</string>
     <string name="insert_folder_icon_spinner_label">Folder icon:</string>
-    <string name="dialog_save_button">Save</string>
-    <string name="dialog_cancel_button">Cancel</string>
     <string name="new_folder_successfully_created">Folder \'%1$s\' successfully created</string>
+    <string name="folder_deleted_successfully">Folder %1$s deleted successfully</string>
+    <string name="folder_updated_successfully">Folder updated successfully</string>
     <string name="err_folder_name_empty">Folder needs a name</string>
+    <string name="err_folder_name_already_exists">Folder name already exists!</string>
 
-    <string name="artist_biography_tab">Biography</string>
-    <string name="artist_albums_tab">Albums</string>
-    <string name="artist_album_description_tab">Description</string>
+    <string name="dialog_save_artist_confirmation_message">This action will save %1$s and all his albums and tracks to the %2$s folder.</string>
+    <string name="dialog_delete_folder_confirmation_message">This action will permanent delete this folder and all the content inside it!</string>
+    <string name="dialog_delete_artist_confirmation_message">This action will permanent delete this artist from %1$s folder!</string>
+    <string name="dialog_save_button">Save</string>
+    <string name="dialog_delete_button">Delete</string>
+    <string name="dialog_cancel_button">Cancel</string>
+
+    <string name="artist_card">Artist card</string>
+    <string name="add_your_first_artist">Add your first artist</string>
+    <string name="artist_image_content_description">Artist image</string>
+    <string name="artist_biography">Biography</string>
+    <string name="artist_albums">Albums</string>
     <string name="artist_tracks_tab">Tracks</string>
+    <string name="artist_search_page_number">Page %1$d</string>
+    <string name="save_artist">Save this artist</string>
+    <string name="delete_artist">Delete this artist</string>
+    <string name="artist_saved_successfully">%1$s saved successfully</string>
+    <string name="artist_saved">Saved</string>
+    <string name="track_time">%1$s min</string>
+    <string name="artist_search_previous_button">Previous</string>
+    <string name="artist_search_next_button">Next</string>
 
     <string name="fetching_data">Downloading data from last.fm&#8230;</string>
 </resources>
