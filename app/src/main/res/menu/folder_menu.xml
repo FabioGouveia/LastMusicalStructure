@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <item
         android:icon="@drawable/ic_folder_s"
         android:title="@string/folder_menu"
         app:showAsAction="always">
-
         <menu>
             <item
                 android:id="@+id/add_artist_to_folder"
@@ -21,7 +19,5 @@
                 android:id="@+id/delete_folder"
                 android:title="@string/delete_folder" />
         </menu>
-
     </item>
-
 </menu>
