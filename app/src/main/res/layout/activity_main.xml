@@ -1,18 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.android.lastmusicalstructure.MainActivity">
+    style="@style/LargeRootView.Vertical"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/user_folders_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/user_folder_collapsing_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/colorPrimary"
+            app:expandedTitleMarginBottom="@dimen/dimen_s"
+            app:expandedTitleMarginEnd="@dimen/dimen_l"
+            app:expandedTitleMarginStart="@dimen/dimen_l"
+            app:expandedTitleTextAppearance="?android:textAppearanceMedium"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_banner_height"
+                android:contentDescription="@string/app_name"
+                android:fitsSystemWindows="false"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bgd_initial_banner"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/user_folder_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/user_folder_list_nested_scroll_view"
+        style="@style/LargeRootView"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ScrollView style="@style/LargeRootView">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/user_folder_list"
+                style="@style/Recycler" />
+
+        </ScrollView>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/create_new_folder_fab"
+        style="@style/AddFolderFAB"
+        app:fabSize="normal"
+        app:layout_anchor="@id/user_folders_app_bar"
+        app:layout_anchorGravity="bottom|end" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/folder_list_empty_view"
+        style="@style/FolderListEmptyView" />
 
-</android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>

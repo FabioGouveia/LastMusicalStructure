@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/LargeRootView.Vertical"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/user_folders_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/user_folder_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/user_folder_list_nested_scroll_view"
+        style="@style/LargeRootView"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ScrollView style="@style/LargeRootView">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/user_folder_list"
+                style="@style/Recycler" />
+
+        </ScrollView>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/create_new_folder_fab"
+        style="@style/AddFolderFAB"
+        app:fabSize="normal"
+        app:layout_anchor="@id/user_folder_list_nested_scroll_view"
+        app:layout_anchorGravity="bottom|end" />
+
+    <TextView
+        android:id="@+id/folder_list_empty_view"
+        style="@style/FolderListEmptyView" />
+
+</android.support.design.widget.CoordinatorLayout>
