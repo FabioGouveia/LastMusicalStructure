@@ -34,6 +34,8 @@
     </style>
 
     <style name="FolderFragmentListView" parent="LargeRootView">
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:listSelector">@android:color/transparent</item>
         <item name="android:layout_toRightOf">@id/folder_fragment_image_view</item>
         <item name="android:visibility">gone</item>
     </style>
