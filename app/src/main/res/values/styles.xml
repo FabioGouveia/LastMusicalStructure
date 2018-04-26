@@ -1,11 +1,327 @@
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+        <item name="android:spinnerDropDownItemStyle">@style/newFolderIconSpinnerItemStyle</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorSecondary">@color/colorPrimaryText</item>
+        <item name="android:spinnerDropDownItemStyle">@style/newFolderIconSpinnerItemStyle</item>
+    </style>
+
+    <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:windowDisablePreview">true</item>
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">@dimen/menu_dropdown_offset</item>
+    </style>
+
+    <style name="LargeRootView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="LargeRootView.Horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="LargeRootView.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="AdaptableRootView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AdaptableRootView.Horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="AdaptableRootView.Vertical">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="InsertFolderNameLayout" parent="Widget.Design.TextInputLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="InsertFolderNameInputField">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">text|textCapWords</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:maxLength">20</item>
+        <item name="android:hint">@string/insert_folder_name_edit_text_hint</item>
+    </style>
+
+    <style name="newFolderIconSpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:spinnerMode">dropdown</item>
+        <item name="android:textColor">@color/colorSecondaryText</item>
+    </style>
+
+    <style name="ArtistAppBarLayout" parent="Widget.Design.AppBarLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="ArtistAppBarToolBar" parent="Base.Widget.AppCompat.Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+    </style>
+
+    <style name="Recycler" parent="LargeRootView">
+        <item name="android:scrollbars">none</item>
+    </style>
+
+    <style name="Card">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="DialogSpinnerLabel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorSecondaryText</item>
+        <item name="android:padding">@dimen/dimen_s</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:text">@string/insert_folder_icon_spinner_label</item>
+    </style>
+
+    <style name="DialogSpinnerRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textColor">@color/colorSecondaryText</item>
+        <item name="android:padding">@dimen/dimen_s</item>
+    </style>
+
+    <style name="EmptyView">
+        <item name="android:drawablePadding">@dimen/dimen_s</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorPrimaryLight</item>
+    </style>
+
+    <style name="AddFolderFAB">
+        <item name="android:src">@drawable/ic_folder_create_new</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/dimen_m</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_m</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <style name="FolderTab" parent="Widget.Design.TabLayout">
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="tabBackground">@drawable/bgd_folder_tab_selector</item>
+        <item name="tabIndicatorColor">@color/colorPrimaryDark</item>
+        <item name="tabSelectedTextColor">@android:color/white</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabMode">scrollable</item>
+        <item name="tabIndicatorHeight">@dimen/dimen_xs</item>
+        <item name="tabTextAppearance">@style/FolderTabTextAppearance</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="FolderTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="FolderCardRootView" parent="AdaptableRootView">
+        <item name="android:padding">@dimen/dimen_s</item>
+    </style>
+
+    <style name="FolderIconView" parent="AdaptableRootView">
+        <item name="android:padding">@dimen/dimen_s</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="FolderListEmptyView" parent="EmptyView">
+        <item name="android:drawableTop">@drawable/ic_folder_add</item>
+        <item name="android:layout_marginTop">@dimen/folder_list_empty_text_view_margin_top</item>
+        <item name="android:text">@string/add_your_first_folder</item>
+    </style>
+
+    <style name="FolderEmptyView" parent="EmptyView">
+        <item name="android:drawableTop">@drawable/ic_artist_add</item>
+        <item name="android:text">@string/add_your_first_artist</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="FolderFragmentImage" parent="LargeRootView">
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="FolderFragmentSeparator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/folder_fragment_separator_height</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="FolderFragmentInfoButton">
+        <item name="android:background">@drawable/bgd_artist_tab_selected</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="FolderFragmentListButton">
+        <item name="android:background">@drawable/bgd_artist_tab_selector</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/colorSecondaryLightTranslucent</item>
+        <item name="android:text">@string/artist_albums</item>
+    </style>
+
+    <style name="FolderFragmentInfoScrollView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="FolderFragmentInfo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/dimen_s</item>
+    </style>
+
+    <style name="ArtistCard" parent="Card">
+        <item name="android:layout_height">@dimen/artist_card_height</item>
+    </style>
+
+    <style name="ArtistCardImage" parent="LargeRootView">
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="ArtistCardFooter" parent="AdaptableRootView.Horizontal">
+        <item name="android:background">@drawable/bgd_artist_card_footer</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="ArtistCardName">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+    </style>
+
+    <style name="ArtistPassedLabel" parent="ArtistCardName">
+        <item name="android:drawableRight">@drawable/ic_artist_saved</item>
+        <item name="android:gravity">right</item>
+        <item name="android:text">@string/artist_saved</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="ArtistSearchTab" parent="AdaptableRootView.Horizontal">
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="ArtistSearchTabButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/bgd_artist_tab_selector</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/artist_search_tab_color_state_list</item>
+    </style>
+
+    <style name="ArtistSearchTabButton.Previous">
+        <item name="android:drawableLeft">@drawable/ic_artist_search_arrow_left_selector</item>
+        <item name="android:drawableStart">@drawable/ic_artist_search_arrow_left_selector</item>
+        <item name="android:enabled">false</item>
+        <item name="android:text">@string/artist_search_previous_button</item>
+    </style>
+
+    <style name="ArtistSearchTabButton.Next">
+        <item name="android:drawableEnd">@drawable/ic_artist_search_arrow_right_selector</item>
+        <item name="android:drawableRight">@drawable/ic_artist_search_arrow_right_selector</item>
+        <item name="android:text">@string/artist_search_next_button</item>
+    </style>
+
+    <style name="ArtistSearchTabSeparator">
+        <item name="android:layout_width">@dimen/dimen_xs</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="ArtistSearchPageNumber" parent="AdaptableRootView">
+        <item name="android:layout_margin">@dimen/dimen_s</item>
+        <item name="android:background">@drawable/bgd_artist_search_page_view</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="ArtistSearchProgressBar">
+        <item name="android:layout_width">@dimen/artist_search_progress_bar_size</item>
+        <item name="android:layout_height">@dimen/artist_search_progress_bar_size</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="ArtistSearchEmptyView" parent="LargeRootView.Vertical">
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="ArtistSearchEmptyViewText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/no_online_artists_available</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textColor">@color/colorSecondaryText</item>
+    </style>
+
+    <style name="ArtistSearchEmptyViewButton">
+        <item name="android:background">@drawable/bgd_try_again_button_selector</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dimen_s</item>
+        <item name="android:text">@string/no_internet_connection_button</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+    </style>
+
+    <style name="TrackListItem">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/dimen_s</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorSecondaryText</item>
+    </style>
+
+    <style name="TrackListItem.TrackName">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+    </style>
+
+    <style name="TrackListItem.Duration">
+        <item name="android:drawableLeft">@drawable/ic_track_duration</item>
+        <item name="android:drawablePadding">@dimen/dimen_s</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
     </style>
 
 </resources>

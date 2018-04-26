@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Card">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="ArtistCard" parent="Card">
+        <item name="android:layout_width">@dimen/artist_card_width</item>
+        <item name="android:layout_height">@dimen/artist_card_height</item>
+    </style>
+
+    <style name="FolderFragmentImage" parent="LargeRootView">
+        <item name="android:layout_width">@dimen/folder_fragment_image_width</item>
+        <item name="android:layout_height">@dimen/folder_fragment_image_height</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="FolderFragmentListButton">
+        <item name="android:background">@drawable/bgd_artist_tab_selector</item>
+        <item name="android:layout_width">@dimen/folder_fragment_image_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@id/folder_fragment_image_view</item>
+        <item name="android:textColor">@color/colorSecondaryLightTranslucent</item>
+        <item name="android:text">@string/artist_albums</item>
+    </style>
+
+    <style name="FolderFragmentInfoScrollView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_toRightOf">@id/folder_fragment_image_view</item>
+    </style>
+
+    <style name="FolderFragmentListView" parent="LargeRootView">
+        <item name="android:layout_toRightOf">@id/folder_fragment_image_view</item>
+        <item name="android:visibility">gone</item>
+    </style>
+</resources>
