@@ -8,5 +8,4 @@
         android:fromYDelta="-100%"
         android:toXDelta="0%"
         android:toYDelta="0%" />
-
 </set>
