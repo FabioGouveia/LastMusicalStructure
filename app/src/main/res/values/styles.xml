@@ -60,15 +60,16 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:inputType">text|textCapWords</item>
         <item name="android:imeOptions">actionDone</item>
-        <item name="android:maxLength">20</item>
+        <item name="android:maxLength">@integer/dialog_insert_new_folder_name_maximum_length</item>
         <item name="android:hint">@string/insert_folder_name_edit_text_hint</item>
     </style>
 
     <style name="newFolderIconSpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">48dp</item>
-        <item name="android:paddingLeft">16dp</item>
-        <item name="android:paddingRight">16dp</item>
+        <item name="android:layout_height">@dimen/folder_icon_spinner_height</item>
+        <item name="android:paddingLeft">@dimen/dimen_m</item>
+        <item name="android:paddingRight">@dimen/dimen_m</item>
+        <item name="android:paddingBottom">@dimen/dimen_s</item>
         <item name="android:spinnerMode">dropdown</item>
         <item name="android:textColor">@color/colorSecondaryText</item>
     </style>
