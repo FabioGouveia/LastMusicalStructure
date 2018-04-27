@@ -1,8 +1,10 @@
 package com.example.android.lastmusicalstructure.ui;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -49,7 +51,7 @@ public class FolderFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_folder, container, false);
 
         if (savedInstanceState != null) {
@@ -59,10 +61,12 @@ public class FolderFragment extends Fragment {
             item = savedInstanceState.getParcelable(ARG_SECTION_ITEM);
         } else {
             Bundle args = getArguments();
-            args.setClassLoader(Folder.class.getClassLoader());
-            folder = args.getParcelable(ARG_SECTION_FOLDER);
-            args.setClassLoader(FolderItem.class.getClassLoader());
-            item = args.getParcelable(ARG_SECTION_ITEM);
+            if (args != null) {
+                args.setClassLoader(Folder.class.getClassLoader());
+                folder = args.getParcelable(ARG_SECTION_FOLDER);
+                args.setClassLoader(FolderItem.class.getClassLoader());
+                item = args.getParcelable(ARG_SECTION_ITEM);
+            }
         }
 
         ImageView folderImageView = rootView.findViewById(R.id.folder_fragment_image_view);
@@ -85,7 +89,10 @@ public class FolderFragment extends Fragment {
                     folderIntent.putExtra(Artist.KEY, item);
                     folderIntent.putExtra(Folder.DISPLAY_MODE_KEY, Folder.ARTIST_OFF_LINE_DISPLAY_MODE);
                     startActivity(folderIntent);
-                    getActivity().overridePendingTransition(R.anim.enter_from_bottom_animation, R.anim.exit_to_top_animation);
+                    Activity activity = getActivity();
+                    if (activity != null) {
+                        activity.overridePendingTransition(R.anim.enter_from_bottom_animation, R.anim.exit_to_top_animation);
+                    }
                 }
             });
 
@@ -104,7 +111,7 @@ public class FolderFragment extends Fragment {
             folderListView.setVisibility(View.VISIBLE);
 
             List<Track> tracks = ((Album) item).getTracks();
-            TrackListAdapter trackListAdapter = new TrackListAdapter(getActivity().getApplicationContext(), tracks);
+            TrackListAdapter trackListAdapter = new TrackListAdapter(getActivity(), tracks);
             folderListView.setAdapter(trackListAdapter);
         }
 
@@ -117,7 +124,7 @@ public class FolderFragment extends Fragment {
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(@NonNull Bundle outState) {
 
         outState.putParcelable(ARG_SECTION_FOLDER, folder);
         outState.putParcelable(ARG_SECTION_ITEM, item);
