@@ -69,7 +69,7 @@
         <item name="android:layout_height">@dimen/folder_icon_spinner_height</item>
         <item name="android:paddingLeft">@dimen/dimen_m</item>
         <item name="android:paddingRight">@dimen/dimen_m</item>
-        <item name="android:paddingBottom">@dimen/dimen_s</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_s</item>
         <item name="android:spinnerMode">dropdown</item>
         <item name="android:textColor">@color/colorSecondaryText</item>
     </style>
