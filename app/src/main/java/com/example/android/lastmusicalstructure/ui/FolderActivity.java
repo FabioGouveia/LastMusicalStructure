@@ -37,8 +37,6 @@ import java.util.List;
 
 public class FolderActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Album>>, PopupMenu.OnMenuItemClickListener {
 
-    private static final String LOG_TAG = FolderActivity.class.getSimpleName();
-
     private ActionBar actionBar;
     private ProgressBar folderProgressBar;
     private TabLayout folderTabLayout;
