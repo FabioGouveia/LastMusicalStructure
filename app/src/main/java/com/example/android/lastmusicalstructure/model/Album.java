@@ -25,11 +25,13 @@ public class Album implements FolderItem {
 
     private long id;
     private String name;
+    private String imageURL;
     private BitmapDrawable image;
     private List<Track> tracks;
 
-    public Album(String name, List<Track> tracks, BitmapDrawable image) {
+    public Album(String name, List<Track> tracks, String imageURL, BitmapDrawable image) {
         this(0, name, tracks, image);
+        this.imageURL = imageURL;
     }
 
     public Album(long id, String name, List<Track> tracks, BitmapDrawable image) {
@@ -52,6 +54,11 @@ public class Album implements FolderItem {
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String getImageURL() {
+        return imageURL;
     }
 
     @Override
