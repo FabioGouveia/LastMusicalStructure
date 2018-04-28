@@ -42,7 +42,7 @@ class JsonUtils {
                 artists.add(artist);
             }
 
-        } catch (JSONException | IOException e) {
+        } catch (JSONException e) {
             Log.e(LOG_TAG, "Problem parsing artists JSON results", e);
         }
 
@@ -89,7 +89,8 @@ class JsonUtils {
 
                         int tracksLength = tracks.size();
                         if (tracksLength > 5) {
-                            albums.add(new Album(albumName, tracks, HttpUtils.makeHttpRequest(imagesArray.getJSONObject(3).getString("#text"))));
+                            String imageURL = imagesArray.getJSONObject(3).getString("#text");
+                            albums.add(new Album(albumName, tracks, imageURL, HttpUtils.makeHttpRequest(imageURL)));
                         }
                     }
                 }
