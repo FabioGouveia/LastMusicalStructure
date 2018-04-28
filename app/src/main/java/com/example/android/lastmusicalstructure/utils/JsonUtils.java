@@ -35,7 +35,9 @@ class JsonUtils {
 
                 String artistName = artistObject.getString("name");
 
-                Artist artist = new Artist(artistName, extractArtistBiography(artistName), HttpUtils.makeHttpRequest(imagesArray.getJSONObject(3).getString("#text")));
+                String imageURL = imagesArray.getJSONObject(3).getString("#text");
+
+                Artist artist = new Artist(artistName, extractArtistBiography(artistName), imageURL, HttpUtils.makeHttpRequest(imageURL));
 
                 artists.add(artist);
             }
