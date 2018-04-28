@@ -43,6 +43,7 @@ public class Album implements FolderItem {
 
     private Album(Parcel in) {
         name = in.readString();
+        imageURL = in.readString();
         in.readList(tracks, Track.class.getClassLoader());
     }
 
@@ -78,6 +79,7 @@ public class Album implements FolderItem {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
+        dest.writeString(imageURL);
         dest.writeList(tracks);
     }
 }
