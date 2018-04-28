@@ -2,6 +2,7 @@ package com.example.android.lastmusicalstructure.utils;
 
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.example.android.lastmusicalstructure.BuildConfig;
@@ -37,8 +38,14 @@ final class HttpUtils {
         return (String) executeRequest(createQuery(artistName, albumName, 0, requestType), false);
     }
 
-    static BitmapDrawable makeHttpRequest(String url) throws IOException {
-        return (BitmapDrawable) executeRequest(url, true);
+    @Nullable
+    static BitmapDrawable makeHttpRequest(String url) {
+        try {
+            return (BitmapDrawable) executeRequest(url, true);
+        } catch (IOException e) {
+            Log.e(LOG_TAG, "Error requesting the image: ", e);
+        }
+        return null;
     }
 
     private static String createQuery(String artistName, String albumName, int pageNumber, int requestType) {
