@@ -22,10 +22,10 @@ public class Album implements FolderItem {
             return new Album[size];
         }
     };
+
     private long id;
     private String name;
     private BitmapDrawable image;
-    private int imageId;
     private List<Track> tracks;
 
     public Album(String name, List<Track> tracks, BitmapDrawable image) {
@@ -41,7 +41,6 @@ public class Album implements FolderItem {
 
     private Album(Parcel in) {
         name = in.readString();
-        imageId = in.readInt();
         in.readList(tracks, Track.class.getClassLoader());
     }
 
@@ -72,7 +71,6 @@ public class Album implements FolderItem {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
-        dest.writeInt(imageId);
         dest.writeList(tracks);
     }
 }
