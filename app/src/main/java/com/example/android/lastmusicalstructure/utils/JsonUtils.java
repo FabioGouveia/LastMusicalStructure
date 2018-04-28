@@ -107,20 +107,23 @@ class JsonUtils {
 
         if (jsonString != null) {
             JSONObject baseJSONObject = new JSONObject(jsonString);
-            JSONArray tracksArray = baseJSONObject.getJSONObject("album").getJSONObject("tracks").getJSONArray("track");
 
-            int tracksLength = tracksArray.length();
+            if (baseJSONObject.has("album")) {
+                JSONArray tracksArray = baseJSONObject.getJSONObject("album").getJSONObject("tracks").getJSONArray("track");
 
-            for (int i = 0; i < tracksLength; i++) {
-                JSONObject trackObject = tracksArray.getJSONObject(i);
+                int tracksLength = tracksArray.length();
 
-                String trackDuration = trackObject.getString("duration");
-                String firstNumber = trackDuration.substring(0, 1);
+                for (int i = 0; i < tracksLength; i++) {
+                    JSONObject trackObject = tracksArray.getJSONObject(i);
 
-                trackDuration = firstNumber + "." + trackDuration.substring(1);
+                    String trackDuration = trackObject.getString("duration");
+                    String firstNumber = trackDuration.substring(0, 1);
 
-                if (!firstNumber.equals("0"))
-                    tracks.add(new Track(trackObject.getString("name"), trackDuration));
+                    trackDuration = firstNumber + "." + trackDuration.substring(1);
+
+                    if (!firstNumber.equals("0"))
+                        tracks.add(new Track(trackObject.getString("name"), trackDuration));
+                }
             }
         }
         return tracks;
