@@ -8,5 +8,7 @@ public interface FolderItem extends Parcelable {
 
     String getName();
 
+    String getImageURL();
+
     BitmapDrawable getImage();
 }
