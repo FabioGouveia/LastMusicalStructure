@@ -30,19 +30,20 @@ public class Album implements FolderItem {
     private List<Track> tracks;
 
     public Album(String name, List<Track> tracks, String imageURL, BitmapDrawable image) {
-        this(0, name, tracks, image);
-        this.imageURL = imageURL;
+        this(0, name, tracks, imageURL, image);
     }
 
-    public Album(long id, String name, List<Track> tracks, BitmapDrawable image) {
+    public Album(long id, String name, List<Track> tracks, String imageURL, BitmapDrawable image) {
         this.id = id;
         this.name = name;
         this.tracks = tracks;
+        this.imageURL = imageURL;
         this.image = image;
     }
 
     private Album(Parcel in) {
         name = in.readString();
+        imageURL = in.readString();
         in.readList(tracks, Track.class.getClassLoader());
     }
 
@@ -78,6 +79,7 @@ public class Album implements FolderItem {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
+        dest.writeString(imageURL);
         dest.writeList(tracks);
     }
 }
