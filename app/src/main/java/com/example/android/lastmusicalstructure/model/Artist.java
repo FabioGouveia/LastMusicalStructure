@@ -30,17 +30,14 @@ public class Artist implements FolderItem {
     private List<Album> albums;
 
     public Artist(String name, String info, String imageURL, BitmapDrawable image) {
-        this.name = name;
-        this.info = info;
+        this(0, name, info, image);
         this.imageURL = imageURL;
-        this.image = image;
     }
 
-    public Artist(long id, String name, String info, String imageURL, BitmapDrawable image) {
+    public Artist(long id, String name, String info, BitmapDrawable image) {
         this.id = id;
         this.name = name;
         this.info = info;
-        this.imageURL = imageURL;
         this.image = image;
     }
 
