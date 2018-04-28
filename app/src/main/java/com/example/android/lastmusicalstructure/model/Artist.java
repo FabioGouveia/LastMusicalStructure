@@ -21,22 +21,26 @@ public class Artist implements FolderItem {
             return new Artist[size];
         }
     };
+
     private long id;
     private String name;
     private String info;
+    private String imageURL;
     private BitmapDrawable image;
     private List<Album> albums;
 
-    public Artist(String name, String info, BitmapDrawable image) {
+    public Artist(String name, String info, String imageURL, BitmapDrawable image) {
         this.name = name;
         this.info = info;
+        this.imageURL = imageURL;
         this.image = image;
     }
 
-    public Artist(long id, String name, String info, BitmapDrawable image) {
+    public Artist(long id, String name, String info, String imageURL, BitmapDrawable image) {
         this.id = id;
         this.name = name;
         this.info = info;
+        this.imageURL = imageURL;
         this.image = image;
     }
 
@@ -44,6 +48,7 @@ public class Artist implements FolderItem {
         id = in.readLong();
         name = in.readString();
         info = in.readString();
+        imageURL = in.readString();
     }
 
     @Override
@@ -58,6 +63,11 @@ public class Artist implements FolderItem {
 
     public String getInfo() {
         return info;
+    }
+
+    @Override
+    public String getImageURL() {
+        return imageURL;
     }
 
     @Override
@@ -83,5 +93,6 @@ public class Artist implements FolderItem {
         dest.writeLong(id);
         dest.writeString(name);
         dest.writeString(info);
+        dest.writeString(imageURL);
     }
 }
