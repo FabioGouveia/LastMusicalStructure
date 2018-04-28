@@ -48,6 +48,7 @@ public class DialogUtils extends DialogFragment {
     public static final int DIALOG_TYPE_SAVE_ARTIST = 4005;
     public static final int DIALOG_TYPE_DELETE_ARTIST = 4006;
     private static final String LOG_TAG = DialogUtils.class.getSimpleName();
+    private static Album album;
     private Context context;
     private ContentResolver contentResolver;
     private Folder folder;
@@ -302,12 +303,18 @@ public class DialogUtils extends DialogFragment {
                                 if (artistUri == null || ContentUris.parseId(artistUri) == -1) {
                                     Log.e(LOG_TAG, "Error saving the artist!");
                                 } else {
-                                    long artistId = ContentUris.parseId(artistUri);
+                                    final long artistId = ContentUris.parseId(artistUri);
 
-                                    FileUtils.saveArtistImage(context, HttpUtils.makeHttpRequest(artist.getImageURL()), artistId);
+                                    new Thread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            FileUtils.saveArtistImage(context, HttpUtils.makeHttpRequest(artist.getImageURL()), artistId);
+                                        }
+                                    }).start();
 
                                     for (Album album : artist.getAlbums()) {
 
+                                        DialogUtils.album = album;
                                         ContentValues albumContentValues = new ContentValues();
                                         albumContentValues.put(AlbumEntry.COLUMN_ALBUM_NAME, album.getName());
                                         albumContentValues.put(AlbumEntry.COLUMN_ARTIST_ID, artistId);
@@ -317,9 +324,14 @@ public class DialogUtils extends DialogFragment {
                                         if (albumUri == null || ContentUris.parseId(albumUri) == -1) {
                                             Log.e(LOG_TAG, "Error saving artist albums!");
                                         } else {
-                                            long albumId = ContentUris.parseId(albumUri);
+                                            final long albumId = ContentUris.parseId(albumUri);
 
-                                            FileUtils.saveArtistAlbumImage(context, HttpUtils.makeHttpRequest(album.getImageURL()), artistId, albumId);
+                                            new Thread(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    FileUtils.saveArtistAlbumImage(context, HttpUtils.makeHttpRequest(DialogUtils.album.getImageURL()), artistId, albumId);
+                                                }
+                                            }).start();
 
                                             for (Track track : album.getTracks()) {
                                                 ContentValues trackContentValues = new ContentValues();
