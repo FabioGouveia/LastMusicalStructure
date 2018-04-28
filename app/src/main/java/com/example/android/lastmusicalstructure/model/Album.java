@@ -1,7 +1,6 @@
 package com.example.android.lastmusicalstructure.model;
 
 
-import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Parcel;
 
@@ -44,7 +43,6 @@ public class Album implements FolderItem {
         name = in.readString();
         imageId = in.readInt();
         in.readList(tracks, Track.class.getClassLoader());
-        image = new BitmapDrawable((Bitmap) in.readParcelable(Bitmap.class.getClassLoader()));
     }
 
     @Override
@@ -76,6 +74,5 @@ public class Album implements FolderItem {
         dest.writeString(name);
         dest.writeInt(imageId);
         dest.writeList(tracks);
-        dest.writeParcelable(image.getBitmap(), 0);
     }
 }
