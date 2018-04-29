@@ -37,9 +37,12 @@ class JsonUtils {
 
                 String imageURL = imagesArray.getJSONObject(3).getString("#text");
 
-                Artist artist = new Artist(artistName, extractArtistBiography(artistName), imageURL, HttpUtils.makeHttpRequest(imageURL));
+                String artistBiography = extractArtistBiography(artistName);
 
-                artists.add(artist);
+                if (artistBiography != null) {
+                    Artist artist = new Artist(artistName, extractArtistBiography(artistName), imageURL, HttpUtils.makeHttpRequest(imageURL));
+                    artists.add(artist);
+                }
             }
 
         } catch (JSONException e) {
@@ -57,7 +60,9 @@ class JsonUtils {
         try {
             JSONObject rootJSONObject = new JSONObject(HttpUtils.makeApiRequest(artistName, null, HttpUtils.API_ACTION_REQUEST_ARTIST_INFO));
 
-            biography = rootJSONObject.getJSONObject("artist").getJSONObject("bio").getString("content");
+            if (rootJSONObject.has("artist")) {
+                biography = rootJSONObject.getJSONObject("artist").getJSONObject("bio").getString("content");
+            }
         } catch (JSONException | IOException e) {
             Log.e(LOG_TAG, "Problem parsing artist biography JSON results", e);
         }
