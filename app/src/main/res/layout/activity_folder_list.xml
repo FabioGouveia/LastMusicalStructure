@@ -28,7 +28,7 @@
                 android:contentDescription="@string/app_name"
                 android:fitsSystemWindows="false"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bgd_initial_banner"
+                android:src="@drawable/initial_banner"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="0.7" />
 
